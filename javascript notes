@@ -1,0 +1,399 @@
+Console.log is used to log(print) a message to the console
+console.log("Apna College");
+
+Variables in JS
+variables are containers for data
+
+full Name--> Camel case
+full name-->
+full_name-->snake case
+full-name-->kabab case
+Full Name-->pascal case
+
+we use camel case in java script
+
+LET , CONST & VAR
+VAR:variable can be re-declared & updated.A global scope variable
+
+LET:variable cannot be re-declared but can be updated.a block scope variable.
+
+CONST: variable cannot be redeclared or updated .A block scope variable.
+
+
+DATA TYPES IN JS
+Number , String , Boolean , Undefined , Null , BigInt , Symbol
+
+FOR OF LOOP  //USE FOR STRING AND ARRAYS
+let str="roshak kumar";
+for(let i of str){    
+   console.log("i =",i);
+}
+
+FOR IN LOOP // it returns keys of the object
+for(let i in student){
+console.log(i);
+}
+
+
+STRING METHODS IN JAVASCRIPT
+let str be our string variable
+
+str.toUpperCase();//it changes the letters of the string to uppercase
+
+str.toLowerCase();//it changes the letters of the string to lowercase
+
+str.trim();//removes whitespaces
+
+str.slice(start,end?)//returns part of string, end?is optional
+
+str1.concat(str2)//joins str2 with str1
+
+str.replace(searchVal,newVal)
+
+str.charAt(idx)
+
+
+
+ARRAY METHODS IN JAVA
+Push():add to end
+Pop():delete from end and return
+toString():convert array to string
+Concat():joins multiple arrays and returns result
+unshift():add to start
+shift():delete from start and return
+slice():returns a piece of the array
+slice(startidx,endidx)
+splice():change original array(add,remove,replace)
+splice(startidx,delcount,newel1....)
+
+
+FOR EACH LOOP IN ARRAYS
+
+arr.forEach(callBackFunction)
+CallbackFunction:Here,it is a function to execute for each element in the array
+
+a callback is a function passed as an argument to another function.
+
+arr.forEach((val)=>{
+   console.log(val);
+})
+
+
+****function which is associated with any datastructure that is called method
+
+
+HIGHER ORDER FUNCTION/METHODS------>these are the functions which takes other functions as a parameter or return any function
+
+SOME MORE ARRAY METHODS
+
+MAP METHOD
+creates a new array with the results of some operation.the value its callback returns are used to form new array
+
+arr.map(callbackFnx(value,index,array))
+
+let newArr=arr.map((val)=>{
+     return val*2;
+});
+
+FILTER METHOD
+creates a new array of elements that give true for a condition/filter ex-all even elements
+
+let newarr=arr.filter((val)=>{
+    return val%2===0;
+})
+
+
+REDUCE METHOD
+perform some operation and reduces the array to a single value.it returns that single value.
+
+arr.reduce((prev/res,curr)=>{
+       prev+curr;
+});
+
+prev store the first element of the array
+curr store the second element of the array
+ 
+
+STARTER CODE
+
+<style> tag connects HTML with CSS
+<script> tag connects HTML with JS
+
+to link html with stylesheet we have to add link tags
+<link> rel="stylesheet" href="style.css">
+
+***script tag is written just before the ending body tag 
+
+<script src="script.js"></script>
+
+
+DOM(DOCUMENT OBJECT MODEL)
+When a webpage is loaded, the browser creates a document object model of the page.
+
+console.log-->print
+console.dir-->document-->prop / methods
+
+DOM MANIPULATION
+selecting with id
+document.getElementById("myId")
+
+
+selecting with class
+document.getElementByClassName("myClass")
+
+
+selecting with tag
+document.getElementsByTagName("p")
+
+*** if we add script tag of js before body we cannot access the dom elements so to acess the dom elemnts we have to add the script tag just before the ending tag of the body
+
+
+QUERY SELECTOR
+document.querySelector("myId/myClass/tag")
+//return first element
+
+document.querySelectorAll("myId/myClass/tag")
+//return a nodelist
+
+PROPERTIES
+TAGNAME: returns tag for element nodes
+innertext:returns the text content of the element and all its children
+innerhtml:returns the plaintext or html contents in the element
+text content:returns textual content even for hidden elements
+
+**IN DOM TREE
+there are three components
+textnodes  comment  elements
+
+ATTRIBUTES OF DOM MANIPULATION
+Attributes:
+getAttribute(attr)// to get the attribute value
+setAttribute(attr,value)//to set the attribute value
+
+STYLE
+node.style
+
+
+INSERT ELEMENTS
+let el=document.createElement("div")
+
+node.append(el)//adds at the end of the node(inside)
+node.prepend(el)//adds at the start of node(inside)
+node.before(el)//adds before the node(outside)
+node.after(el)//adds after the node(outside)
+
+DELETE ELEMENT
+node.remove()//remove the node
+
+
+EVENTS IN JAVASCRIPT
+The change in the state of an object is known as event
+
+events are fired to notify code of "interesting changes" that may affect code execution.
+
+mouse events(click,doubleclick etc)
+keyboard events(keypress,keyup,keydown)
+form events (submit etc)
+print event & many more
+
+
+SYNTAX
+node.event=()=>{
+//handle here
+}
+
+
+EVENT LISTENERS
+node.addEventListener(event,callback)
+
+node.removeEventListener(event,callback)
+
+****the callback reference should be same to remove 
+
+
+CLASS LIST
+we can add two aor more classes at a particular object.
+object.classlist.add(classname);
+
+
+PROTOTYPES IN JS
+
+a javascript object as an entity having state and behaviour(properties and methods)
+
+JS objects have a special property called prototype
+
+we can set prototype using _ _proto_ _
+
+*****if object and prototype have same method objects method will be used.
+
+
+CLASSES IN JS
+class is a program code template for creating objects.
+those objects will have some state(variables) & some behaviour(functions) inside it.
+
+class MyClass{
+  constructor(){...}
+  my method(){...}
+}
+
+let myObj=new Myclass();
+
+
+CONSTRUCTOR
+constructor() method is:
+automatically invoked by new
+initializes object
+
+class MyClass{
+  constructor(){...}
+  myMethod(){...}
+}
+
+INHERITANCE IN JS
+inheritance is passing down properties & methods from parent class to child class.
+
+class Parent {
+
+}
+
+class Child extends Parents{
+
+}
+
+***if child & parent have same method child's method will be used(method overriding)
+
+
+SUPER KEYWORD
+the super keyword is used to call the constructor of its parent class to access the parent properties and methods
+
+super(args)//calls parent constructor
+
+super.parentMethod(args)
+
+
+ERROR HANDLING
+
+try-catch
+
+try{
+   _normal code
+}catch(err){//err is error object
+   ...handling error
+
+}
+
+
+
+SYNC IN JS
+
+Synchronous
+Synchronous means the code runs in a particular sequence of instructions given in the program.
+Each instruction waits for the previous instruction to complete its execution .
+
+
+Asynchronous
+due to synchronous programming sometimes imp instruction get blocked due to some previous instruction ,which causes a delay in the UI.
+Asynchronous code execution allows to execute next instruction immesdiately and doesn't bliock the flow.
+
+
+TIMEOUT FUNCTION
+ function hello(){
+      console.log("hello");
+}
+
+setTimeout(hello,2000);
+
+
+CALLBACKS
+a callback is a function passed an argument to another function.
+
+
+CALLBACK HELL
+callback hell:nested callbacks stacked below one another forming a pyramid structure.(pyramid of doom)
+this style of programming becomes difficult to understand and manage.
+
+
+CALLBACK HELL PROBLEM CAN BE SOLVED BY A CONCEPT CALLED PROMISES
+
+PROMISES
+promise is for "eventual" completion of task.it is an object in JS 
+it is a solution to callbak hell.
+
+let promise=new Promise((resolve,reject)=>{....})
+
+****resolve and reject are callbacks provided by JS
+
+there are three states of promises
+pending , fulfilled(resolved) , reject
+
+
+A javascript promise object can be:
+pending: the result is undefined
+resolved:the result is a value(fulfilled) resolve(result)
+rejected:the result is an error object    reject(error) 
+
+
+use of promises
+.then() & .catch()
+
+promise.then((res)=>{...}) if we want to do work after fulfill
+promise.catch((err))=>{...}) if we want to do work after error
+
+
+ASYNC-AWAIT
+async function always return a promise.
+async function myFunc(){...}
+
+await pauses the execution of its surrounding async function until the promise is settled.
+
+
+as await can be used in async function only so to avoid this we use
+
+IIFE:IMMEDIATELY INVOKED FUNCTION EXPRESSION
+IIFE is a function that is called immediately as soon as it is defined.
+
+(function () {
+//...
+})();
+
+
+(async () =>{
+//...
+})();
+
+
+FETCH API(Application programming interface)
+the fetch api provides an interface for fetching(sending/receiving) resources.
+it uses request and response objects.
+the fetch() method is used to fetch a resource(data).
+
+let promise=fetch(url,[options])
+
+
+UNDERSTANDING TERMS
+AJAX is asynchronous JS and XML
+
+JSON is javascript object notation
+
+json()method:returns a second promise that resolves with the result of parsing the rsponse body text as json.(input is JSON,output is JS object)
+
+XML is repaced by JSON\
+
+PROCESS
+1.response(JSON)
+2.convert response into js object by json() method
+
+
+REQUESTS AND RESPONSE
+
+HTTP verbs
+response status code
+
+****http response headers also contain details about the responses,such as content type,http ststus code etc. 
+
+
+
+
+
+
+
